@@ -1,0 +1,767 @@
+body {
+  padding-top: 0px;
+  margin: 0px;
+  padding: 0px;
+}
+
+.container-fondo{
+  position: fixed; /* Fijo en la pantalla, no se mueve con el scroll */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centra la imagen */
+  opacity: 0.2; /* Transparencia para dar el efecto de marca de agua */
+  z-index: -1; /* Envía la marca de agua detrás de otros elementos */
+  pointer-events: none; /* Evita que la imagen interfiera con otros elementos */
+}
+
+.container-fondo img{
+  width: 500px;
+  mix-blend-mode: multiply;
+}
+
+.navbar-container {
+  position: relative;
+  width: 100%; /* Ancho del contenedor */
+}
+
+.navbar-container button {
+  color: #FFF;
+  border: none;
+}
+
+.navbar-container button:hover{
+  border: 1px solid #FFF;
+}
+
+.container-bacground img {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  object-fit: cover;
+  width: 100%;
+  height: 300px;
+}
+
+.navbar-primary,
+.navbar-secondary {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  transition: rigth 0.3s ease;
+  background-color: transparent;
+  background-color: #1f4b2c;
+  /* backdrop-filter: blur(10px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+}
+
+.navbar-primary {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  padding: 5px 0px;
+  margin: auto;
+  display: flex;
+  text-align: justify;
+  justify-content: center;
+}
+
+@media screen and (max-width: 800px) {
+  .navbar-primary {
+    display: block;
+    text-align: justify;
+    justify-content: center;
+  }
+
+  .navbar-primary .navbar-collapse a {
+    font-size: 15px;
+  }
+}
+
+.navbar-primary.fixed {
+  position: fixed;
+  top: 0;
+}
+
+/* Estilos para los elementos del menú */
+.navbar-primary .navbar-collapse ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-primary .navbar-collapse li {
+  margin: 0 10px;
+  position: sticky;
+  /* Espaciado entre elementos del menú */
+}
+
+.navbar-primary .navbar-collapse a {
+  color: #000;
+  font-weight: small;
+  text-decoration: none;
+  padding: 10px;
+  display: block;
+  font-family: sans-serif;
+  font-size: 18px;
+}
+
+.navbar-primary .navbar-collapse .nav-item .nav-link:hover {
+  font-size: 20px;
+  color: gray;
+}
+
+.navbar-primary .navbar-collapse .dropdown-menu a {
+  list-style: none;
+  font-size: 15px;
+  color: #021b2b;
+}
+/* Aquí es el final del primer navbar de navegación */
+
+/* Aquí comienza el segundo css para el segundo navbar de navegación  */
+.navbar-secondary {
+  position: relative;
+  z-index: 999;
+  /* top: 10px; Ajusta según la altura de la navbar-primary */
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  font-size: 18px;
+}
+
+.navbar-secondary .navbar-nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-secondary .navbar-container a {
+  color: #000;
+  font-weight: small;
+  text-decoration: none;
+  padding: 10px;
+  display: block;
+  text-align: justify;
+  font-family: sans-serif;
+  font-size: 18px;
+}
+
+.navbar-secondary .navbar-container .nav-item .nav-link:hover {
+  font-size: 20px;
+  color: gray;
+}
+
+.navbar-secondary .navbar-container .dropdown-menu a {
+  list-style: none;
+  font-size: 15px;
+  color: #021b2b;
+}
+
+/* Para pantallas entre 800px y 1000px (iPads y tablets) */
+@media screen and (min-width: 800px) and (max-width: 1000px) {
+  .navbar-secondary .navbar-container .navbar-nav {
+    display: grid;
+    gap: 5px;
+    grid-template-columns: repeat(4, 1fr); /* 4 columnas */
+  }
+}
+
+/* Para pantallas entre 600px y 799px (tablets en modo vertical) */
+@media screen and (min-width: 600px) and (max-width: 799px) {
+  .navbar-secondary .navbar-container .navbar-nav {
+    display: grid;
+    gap: 5px;
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas */
+  }
+}
+
+/* Para pantallas menores a 600px (móviles) */
+@media screen and (max-width: 599px) {
+  .navbar-secondary .navbar-container .navbar-nav {
+    display: grid;
+    gap: 5px;
+    grid-template-columns: repeat(1, 1fr); /* 1 columna */
+  }
+}
+
+/* Esconde el dropdown por defecto */
+.nav-item.dropdown .dropdown-menu {
+  display: none;
+  width: 250px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1000;
+}
+
+/* Muestra el dropdown al pasar el cursor */
+.nav-item.dropdown:hover .dropdown-menu {
+  display: block;
+  opacity: 1;
+}
+
+
+.container-img {
+  position: relative;
+  width: 100%; /* Ajusta el ancho máximo según necesites */
+  height: 450px; /* Ajusta la altura según necesites */
+  overflow: hidden; /* Para evitar que el contenido se desborde */
+}
+
+.container-background img {
+  margin: 0px;
+  padding: 0px;
+  width: 100%; /* La imagen cubre todo el ancho del contenedor */
+  height: 100%; /* La imagen cubre toda la altura del contenedor */
+  object-fit: cover; /* Asegura que la imagen cubra el contenedor sin distorsión */
+  display: block;
+  overflow: hidden;
+}
+
+.Information {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.5
+  ); /* Fondo semitransparente sobre la imagen */
+  color: white; /* Texto blanco para contraste */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.et_pb_text_inner h1,
+.et_pb_text_inner h2 {
+  margin: 10px 0; /* Espaciado entre los títulos */
+  text-align: justify; /* Centrado de texto */
+}
+
+.et_pb_text_inner h1 {
+  font-size: 80px;
+  font-family: Arial;
+  font-weight: normal;
+  color: #fff;
+}
+
+.et_pb_text_inner h2 {
+  font-size: 18px;
+  font-family: Arial;
+  font-weight: none;
+  color: #fff;
+  margin-bottom: 250px;
+}
+
+@media screen and (max-width: 800px) {
+  .et_pb_text_inner h1 {
+    font-size: 54px;
+  }
+
+  .et_pb_text_inner h2 {
+    font-size: 10px;
+    margin-bottom: 250px;
+  }
+
+  .container-links img {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+.container-information {
+  background-color: #fff;
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 800px; /* Ancho máximo del contenedor de enlaces */
+}
+
+.container-links {
+  display: flex;
+  margin-bottom: 25px;
+  flex-wrap: wrap;
+  justify-content: center;
+  justify-content: space-around; /* Espaciado uniforme entre los enlaces */
+}
+
+.container-links div {
+  text-align: center;
+}
+
+.container-information .container-links img {
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+.container-information .container-links a {
+  color: #000;
+  display: grid;
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+  justify-items: center;
+  text-align: center;
+}
+
+.container-information .container-links a h1 {
+  font-size: 20px;
+  font-family: Arial;
+  font-weight: normal;
+  text-align: center;
+}
+
+/* Estilo general para el artículo */
+.Principal {
+  padding: 20px;
+  margin-top: 35px;
+  margin-bottom: 35px;
+  box-sizing: border-box;
+  text-align: center;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+/* Estilo para el título */
+.Principal .Title h1 {
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 20px;
+  margin-top:60px;
+  font-size: 80px;
+  font-weight: normal;
+  font-family: Arial;
+  color: #000;
+}
+
+/* Estilo para el contenedor del slider */
+#Slider {
+  position: relative;
+  width: 450px;
+  top: 18%;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para un efecto más estético */
+}
+
+/* Estilo para el slider que contiene las imágenes */
+.slider {
+  display: flex;
+  transition: transform 0.5s ease;
+  flex-wrap: wrap;
+}
+
+.slider figure {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  flex: 1;
+}
+
+/* Estilo para cada producto que contiene las imágenes */
+.producto {
+  position: relative;
+  min-width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.producto img {
+  width: 100%;
+  height: 450px;
+  object-fit: cover; /* Asegura que la imagen cubra todo el contenedor */
+  border-radius: 5px;
+}
+
+/* Estilo para el botón que se coloca sobre la imagen */
+.producto .overlay-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 255, 255, 0.7); /* Fondo semi-transparente */
+  color: #000;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.producto .overlay-btn h1 {
+  font-size: 35px;
+  color: #000;
+  font-family: Arial;
+  font-weight: normal;
+}
+
+.producto .overlay-btn:hover {
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.9
+  ); /* Fondo más claro al pasar el ratón */
+}
+
+/* Estilo para los botones de navegación (prev y next) */
+.controls {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  pointer-events: none; /* Para que el clic pase a través del contenedor */
+}
+
+#prev,
+#next {
+  background-color: transparent;
+  color: #000;
+  border: none;
+  cursor: pointer;
+  pointer-events: auto; /* Permite clics en los botones */
+  transition: color 0.3s;
+}
+
+#prev:hover,
+#next:hover {
+  color: #1b7cb8;
+}
+
+/* Ajusta la posición de los botones para que estén en los costados */
+#prev {
+  position: absolute;
+  left: 50px; /* Ajusta la posición para que esté a la izquierda del slider */
+  bottom: 125px;
+  transform: translateY(-50%);
+}
+
+#next {
+  position: absolute;
+  right: 50px;
+  bottom: 125px;
+  transform: translateY(-50%);
+}
+
+@media screen and (max-width: 800px) {
+  .Principal {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .Principal .Title h1 {
+    margin-top: 100px;
+    font-size: 54px;
+  }
+
+  #Slider {
+    width: 285px;
+    top: 30px;
+    overflow: hidden;
+    border-radius: 10px;
+    background-color: #ffffff; /* Fondo del contenedor del slider */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para un efecto más estético */
+  }
+
+  .producto img {
+    height: 300px;
+  }
+
+  #prev {
+    position: absolute;
+    bottom: 150px;
+    transform: translateY(-50%);
+  }
+
+  #next {
+    position: absolute;
+    bottom: 150px;
+    transform: translateY(-50%);
+  }
+}
+
+section {
+  width: 100%;
+  margin-top: 55px;
+  margin-bottom: 35px;
+  display: flex;
+  justify-content: center; /* Centra el contenido horizontalmente */
+  align-items: center; /* Centra el contenido verticalmente (opcional) */
+}
+
+section .container-text {
+  text-align: justify;
+  width: 80%;
+  margin-top: 35px;
+  margin-bottom: 35px;
+}
+
+section .container-text h1 {
+  font-size: 80px;
+  text-align: center;
+  font-family: Arial;
+  font-weight: normal;
+  color: #000;
+  margin-left: 20px;
+  margin-top: 45px;
+  margin-bottom: 15px;
+}
+
+section .container-text p {
+  font-size: 20px;
+  font-family: Arial;
+  font-weight: normal;
+  color: #000;
+  margin-left: 25px;
+  margin-right: 25px;
+}
+
+@media screen and (max-width: 800px) {
+  section .container-text {
+    text-align: justify;
+    width: 100%;
+    margin-top: 35px;
+    margin-bottom: 35px;
+  }
+
+  section .container-text h1 {
+    font-size: 54px;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+
+  section .container-text p {
+    font-size: 20px;
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+}
+
+.GuiasDocumentos {
+  width: 100%;
+  margin-top: 55px;
+  margin-bottom: 35px;
+  display: grid;
+  justify-content: center; /* Centra el contenido horizontalmente */
+  align-items: center; /* Centra el contenido verticalmente (opcional) */
+}
+
+.GuiasDocumentos .container-title {
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+  justify-items: center;
+  margin-top: 35px;
+  margin-bottom: 35px;
+}
+
+.container-title h1,
+.container-title h2 {
+  margin: 10px 0; /* Espaciado entre los títulos */
+  text-align: center; /* Centrado de texto */
+}
+
+.GuiasDocumentos .container-title h1 {
+  font-size: 80px;
+  font-family: Arial;
+  font-weight: normal;
+  color: #000;
+  margin-left: 20px;
+  margin-bottom: 15px;
+  margin-top: 50px;
+}
+
+@media screen and (max-width: 800px){
+  .GuiasDocumentos .container-title h1 {
+    font-size: 40px;
+    text-align: center;
+  }
+}
+
+.GuiasDocumentos .container-title h2 {
+  font-size: 18px;
+  font-family: Arial;
+  font-weight: normal;
+  color: #000;
+  margin-left: 20px;
+  margin-bottom: 15px;
+}
+.GuiasDocumentos .container-Guias {
+  width: 100%; /* O max-width: 1200px; si quieres un ancho máximo específico */
+  display: grid;
+  justify-items: center;
+}
+
+.GuiasDocumentos .container-Guias .container-documents {
+  margin-left: 0;
+  margin-right: 0;
+  display: grid;
+  justify-items: center;
+  grid-template-columns: repeat(4, 1fr);
+  width: 100%; /* Ajusta según el diseño */
+  max-width: 1200px; /* Ancho máximo opcional */
+}
+
+.GuiasDocumentos .container-Guias .container-documents img{
+  width: 250px;
+  height: 300px;
+  margin-left: 25px;
+  margin-right: 25px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.591);
+}
+
+.GuiasDocumentos .container-Guias .container-documents h1{
+  font-size: 18px;
+  margin-top: 15px;
+  margin-bottom: 50px;
+  color: #000;
+  text-align: center;
+}
+
+/* Adaptar a 2 columnas en pantallas medianas (tabletas, iPads) */
+@media (max-width: 1000px) {
+  .GuiasDocumentos .container-Guias .container-documents {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Adaptar a 1 columna en pantallas pequeñas (móviles) */
+@media (max-width: 600px) {
+  .GuiasDocumentos .container-Guias .container-documents {
+    grid-template-columns: 1fr;
+    margin: 0 auto;
+    justify-items: center;
+  }
+}
+
+
+.piepagina {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.piepagina .background-img{
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: blur(2px); /* Aplica un filtro de desenfoque a la imagen */
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.piepagina .background-img img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.piepagina .grupo1,
+.piepagina .grupo2 {
+  z-index: 1; /* Asegura que el contenido del footer esté encima de la imagen de fondo */
+  padding: 20px; /* Ajusta el padding según sea necesario */
+}
+
+.grupo1 {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 50px;
+  padding: 45px 0px;
+}
+
+.piepagina .grupo1 .box figure {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+}
+
+.piepagina .grupo1 .box figure img {
+  width: 250px;
+  border-radius: 8px;
+  mix-blend-mode: multiply;
+  box-shadow: 0 0 10px rgb(0, 0, 0);
+
+}
+
+.piepagina .grupo1 .box h2 {
+  color: #000;
+  font-family: Arial;
+  margin-bottom: 25px;
+  font-size: 30px;
+  font-weight: normal;
+}
+
+.piepagina .grupo1 .box p {
+  font-size: 18px;
+  color: #000;
+  margin-left: 0%;
+  text-align: justify;
+  font-family: Arial;
+  font-weight: normal;
+}
+
+.piepagina .grupo1 .redessociales a {
+  display: inline-block;
+  text-decoration: none;
+  width: 30%;
+  max-height: 45px;
+  line-height: 45px;
+  color: #000;
+  margin-right: 10px;
+  margin-top: 5px;
+  background-color: transparent;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.729);
+  border-radius: 8px;
+  text-align: center;
+  transition: all 300ms ease;
+}
+
+.piepagina .grupo1 .redessociales a:hover {
+  transition: 500ms;
+  transform: scale(1.2);
+  color: #FFF;
+  background-color: #1f4b2c;
+}
+
+.piepagina .grupo2 {
+  background-color: #1f4b2c;
+  padding: 15px 10px;
+  text-align: center;
+  color: #fff;
+}
+
+.piepagina .grupo2 .small {
+  font-size: 15px;
+}
+
+@media screen and (max-width: 800px) {
+  .grupo1 {
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 30px;
+    padding: 0 35px;
+    text-align: center;
+    padding: 25px;
+  }
+}

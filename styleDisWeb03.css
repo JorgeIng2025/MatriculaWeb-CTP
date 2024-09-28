@@ -1,0 +1,254 @@
+
+header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.3);
+    /* Fondo blanco transparente */
+    backdrop-filter: blur(10px);
+    /* Difuminado */
+    z-index: 1000;
+    padding: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Sombra sutil para efecto de elevación */
+    z-index: 1000;
+}
+
+
+h1 {
+    margin-top: 100px;
+    text-align: center;
+    font-family: serif;
+    font-weight: bold;
+    font-size: 54px;
+    color: #F4FFFC;
+}
+
+
+/* Sidebar lateral */
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+  
+
+}
+
+/* Cambiar color a texto de sidebar */
+.sidebar a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 14px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+  margin-top: 100px ;
+
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.MenuHorizontal {
+  list-style: none;
+  justify-content: center;
+  margin-top: 85px;
+}
+
+.MenuVertical {
+  display: none;
+  list-style: none;
+}
+
+
+.MenuHorizontal li:hover .MenuVertical {
+  display: block;
+
+}
+
+/* Color a botón menú */
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #0c0a0a;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+}
+
+/* Función para cuando el usuario pase el mouse sobre el botón menú */
+.openbtn:hover {
+  background-color: #444;
+}
+
+#main {
+  transition: margin-left .5s;
+  padding: 16px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidebar {
+      padding-top: 15px;
+  }
+
+  .sidebar a {
+      font-size: 18px;
+  }
+}
+
+
+.contenedorForms{
+  flex-wrap: wrap;
+  justify-content: space-around;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+@media screen and (max-width: 600px) {
+  .contenedorForms {
+    flex-direction: column;
+    grid-template-columns: repeat(2, 1fr);
+    text-align: center;
+  }
+
+}
+
+.cuadro p{
+  color: #F4FFFC;
+  list-style: none;
+  text-align: center;
+  margin-right: 25px;
+}
+
+.cuadro img{
+  margin-bottom: 10px;
+  max-width: 50%;
+  height: 25%;
+  cursor: pointer;
+}
+
+.contenedorForms {
+  margin-top: 3em;
+  text-align: center;
+}
+.piepagina {
+  width: 100%;
+  height: 50%;
+  background-color: transparent;
+}
+
+.grupo1 {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 50px;
+  padding: 45px 0px;
+}
+
+.piepagina .grupo1 .box figure {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+
+}
+
+.piepagina .grupo1 .box figure img {
+  width: 250px;
+  border-radius: 8px;
+}
+
+.piepagina .grupo1 .box h2 {
+  color: #F4FFFC;
+  font-family: serif;
+  margin-bottom: 25px;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.piepagina .grupo1 .box p {
+  font-size: 18px;
+  color: #F4FFFC;
+  margin-left: 0%;
+  text-align: justify;
+  font-family: sans-serif;
+}
+
+.piepagina .grupo1 .redessociales a {
+  display: inline-block;
+  text-decoration: none;
+  width: 90px;
+  max-height: 45px;
+  line-height: 45px;
+  color: white;
+  margin-right: 10px;
+  margin-top: 5px;
+  background-color: #0d2033;
+  border-radius: 8px;
+  text-align: center;
+  transition: all 300ms ease;
+}
+
+.piepagina .grupo1 .redessociales .fa-envelope {
+  width: 195px;
+  background-color: transparent;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+
+}
+
+.piepagina .grupo1 .redessociales .fa-phone {
+  width: 195px;
+  background-color: transparent;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+}
+
+
+.piepagina .grupo2 {
+  background-color: #1f4b2c;
+  padding: 15px 10px;
+  text-align: center;
+  color: #F4FFFC;
+}
+
+.piepagina .grupo2 .small {
+  font-size: 15px;
+
+}
+
+@media screen and (max-width: 800px) {
+  .grupo1 {
+      grid-template-columns: repeat(1, 1fr);
+      grid-gap: 30px;
+      padding: 0 35px;
+      text-align: center;
+      padding: 25px;
+  }
+}

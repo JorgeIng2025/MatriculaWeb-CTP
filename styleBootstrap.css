@@ -1,0 +1,416 @@
+body {
+  background-color: #f4fffc;
+}
+.container-title {
+  position: fixed; /* Fijo en la pantalla, no se mueve con el scroll */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centra la imagen */
+  opacity: 0.3; /* Transparencia para dar el efecto de marca de agua */
+  z-index: -1; /* Envía la marca de agua detrás de otros elementos */
+  pointer-events: none; /* Evita que la imagen interfiera con otros elementos */
+}
+
+.container-title img {
+  width: 450px;
+  mix-blend-mode: multiply;
+}
+
+.Titulo {
+  color: #000;
+  margin-top: 0px;
+  text-align: center;
+  font-family: Arial;
+  font-size: 80px;
+  margin-bottom: 15px;
+}
+
+@media screen and (max-width: 800px) {
+  .Titulo {
+    color: #001800;
+    margin-top: 55px;
+    text-align: center;
+    font-family: Arial;
+    font-size: 54px;
+    margin-bottom: 15px;
+  }
+}
+
+.CTP {
+  overflow: hidden;
+  /* Oculta el contenido que sobrepasa los bordes */
+  /* border-right: .10em solid black; */
+  /* Crea un cursor */
+  /* white-space: nowrap;  */
+  margin: 0 auto;
+  /* Centra el texto horizontalmente */
+  letter-spacing: 0.1em;
+  /* Espaciado entre letras */
+  animation: typing 3s steps(30, end), blink-caret 0.75s step-end infinite;
+}
+
+/* Animación de escritura */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
+/*nav-vertical*/
+body {
+  padding-top: 0px;
+  margin: 0px;
+  padding: 0px;
+}
+
+.navbar-container {
+  position: relative;
+  width: 100%; /* Ancho del contenedor */
+}
+
+.navbar-container button {
+  color: #FFF;
+  border: none;
+}
+
+.navbar-container button:hover{
+  border: 1px solid #FFF;
+}
+
+.container-bacground img {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  object-fit: cover;
+  width: 100%;
+  height: 300px;
+}
+
+.navbar-primary,
+.navbar-secondary {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  transition: rigth 0.3s ease;
+  background-color: transparent;
+  background-color: #5fa674;
+  /* backdrop-filter: blur(10px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+}
+
+.navbar-primary {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  padding: 5px 0px;
+  margin: auto;
+  display: flex;
+  text-align: justify;
+  justify-content: center;
+}
+
+@media screen and (max-width: 800px) {
+  .navbar-primary {
+    display: block;
+    text-align: justify;
+    justify-content: center;
+  }
+
+  .navbar-primary .navbar-collapse a {
+    font-size: 15px;
+  }
+}
+
+.navbar-primary.fixed {
+  position: fixed;
+  top: 0;
+}
+
+/* Estilos para los elementos del menú */
+.navbar-primary .navbar-collapse ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-primary .navbar-collapse li {
+  margin: 0 10px;
+  position: sticky;
+  /* Espaciado entre elementos del menú */
+}
+
+.navbar-primary .navbar-collapse a {
+  color: #000;
+  font-weight: small;
+  text-decoration: none;
+  padding: 10px;
+  display: block;
+  font-family: sans-serif;
+  font-size: 18px;
+}
+
+.navbar-primary .navbar-collapse .nav-item .nav-link:hover {
+  font-size: 20px;
+  color: gray;
+}
+
+.navbar-primary .navbar-collapse .dropdown-menu a {
+  list-style: none;
+  font-size: 15px;
+  color: #021b2b;
+}
+/* Aquí es el final del primer navbar de navegación */
+
+/* Aquí comienza el segundo css para el segundo navbar de navegación  */
+.navbar-secondary {
+  position: relative;
+  z-index: 999;
+  /* top: 10px; Ajusta según la altura de la navbar-primary */
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  font-size: 18px;
+}
+
+.navbar-secondary .navbar-nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-secondary .navbar-container a {
+  color: #000;
+  font-weight: small;
+  text-decoration: none;
+  padding: 10px;
+  display: block;
+  text-align: justify;
+  font-family: sans-serif;
+  font-size: 18px;
+}
+
+.navbar-secondary .navbar-container .nav-item .nav-link:hover {
+  font-size: 20px;
+  color: gray;
+}
+
+.navbar-secondary .navbar-container .dropdown-menu a {
+  list-style: none;
+  font-size: 15px;
+  color: #021b2b;
+}
+
+/* Para pantallas entre 800px y 1000px (iPads y tablets) */
+@media screen and (min-width: 800px) and (max-width: 1000px) {
+  .navbar-secondary .navbar-container .navbar-nav {
+    display: grid;
+    gap: 5px;
+    grid-template-columns: repeat(4, 1fr); /* 4 columnas */
+  }
+}
+
+/* Para pantallas entre 600px y 799px (tablets en modo vertical) */
+@media screen and (min-width: 600px) and (max-width: 799px) {
+  .navbar-secondary .navbar-container .navbar-nav {
+    display: grid;
+    gap: 5px;
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas */
+  }
+}
+
+/* Para pantallas menores a 600px (móviles) */
+@media screen and (max-width: 599px) {
+  .navbar-secondary .navbar-container .navbar-nav {
+    display: grid;
+    gap: 5px;
+    grid-template-columns: repeat(1, 1fr); /* 1 columna */
+  }
+}
+
+/* Esconde el dropdown por defecto */
+.nav-item.dropdown .dropdown-menu {
+  display: none;
+  width: 250px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1000;
+}
+
+/* Muestra el dropdown al pasar el cursor */
+.nav-item.dropdown:hover .dropdown-menu {
+  display: block;
+  opacity: 1;
+}
+
+/* Para acomodar el texto del body en Seccion01*/
+#Information section {
+  display: grid;
+  justify-content: center; /* Centra el contenido horizontalmente */
+  align-items: center; /* Centra el contenido verticalmente (opcional) */
+}
+
+#Information section .Description{
+  max-width: 1000px;
+  text-align: center;
+  justify-content: center;
+  justify-items: center;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+
+  margin-right: 50px;
+  margin-left: 50px;
+  font-size: 18px;
+  color: #000;
+  font-weight: bold;
+  text-align: justify;
+
+  h2 {
+    color: #000;
+    font-family: Arial;
+    font-weight: bold;
+    text-align: justify;
+    font-size: 30px;
+    margin-bottom: 15px;
+  }
+}
+
+
+@media screen and (max-width: 800px) {
+  #Information section {
+    display: grid;
+    margin-left: 25px;
+    margin-right: 25px;
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+/* Finalizar acomodo del texto del body */
+
+/* #dropdown-Menu ul{
+    color: red;
+} */
+
+.piepagina {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.piepagina .background-img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: blur(2px); /* Aplica un filtro de desenfoque a la imagen */
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.piepagina .background-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.piepagina .grupo1,
+.piepagina .grupo2 {
+  z-index: 1; /* Asegura que el contenido del footer esté encima de la imagen de fondo */
+  padding: 20px; /* Ajusta el padding según sea necesario */
+}
+
+.grupo1 {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 50px;
+  padding: 45px 0px;
+}
+
+.piepagina .grupo1 .box figure {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+}
+
+.piepagina .grupo1 .box figure img {
+  width: 250px;
+  border-radius: 8px;
+  mix-blend-mode: multiply;
+  box-shadow: 0 0 10px rgb(0, 0, 0);
+}
+
+.piepagina .grupo1 .box h2 {
+  color: #000;
+  font-family: Arial;
+  margin-bottom: 25px;
+  font-size: 30px;
+  font-weight: normal;
+}
+
+.piepagina .grupo1 .box p {
+  font-size: 18px;
+  color: #000;
+  margin-left: 0%;
+  text-align: justify;
+  font-family: Arial;
+  font-weight: normal;
+}
+
+.piepagina .grupo1 .redessociales a {
+  display: inline-block;
+  text-decoration: none;
+  width: 30%;
+  max-height: 45px;
+  line-height: 45px;
+  color: #000;
+  margin-right: 10px;
+  margin-top: 5px;
+  background-color: transparent;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.729);
+  border-radius: 8px;
+  text-align: center;
+  transition: all 300ms ease;
+}
+
+.piepagina .grupo1 .redessociales a:hover {
+  transition: 500ms;
+  transform: scale(1.2);
+  color: #fff;
+  background-color: #1f4b2c;
+}
+
+.piepagina .grupo2 {
+  background-color: #1f4b2c;
+  padding: 15px 10px;
+  text-align: center;
+  color: #fff;
+}
+
+.piepagina .grupo2 .small {
+  font-size: 15px;
+}
+
+@media screen and (max-width: 800px) {
+  .grupo1 {
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 30px;
+    padding: 0 35px;
+    text-align: center;
+    padding: 25px;
+  }
+}
